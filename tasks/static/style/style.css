@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+body{
+    background-image: url(../images/mac.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    
+    
+}
+body h1, h2{
+    color: whitesmoke;
+    justify-content: center;
+    display: flex;
+}
+ body h2{
+    color: rgb(224, 216, 206);
+}
+body form{
+    justify-content: center;
+    display: flex;
+
+}
+button{
+    justify-content: center;
+    display: flex;
+    
+
+}
