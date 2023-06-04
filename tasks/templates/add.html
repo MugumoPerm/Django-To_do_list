@@ -4,7 +4,8 @@
 
 <h1> Add Tasks </h1>
 
-<form action="" method="POST">
+<form action="{% url 'add' %}" method="POST">
+    {% csrf_token %}
     <div class="form-floating col-md-4 mt-4  mb-3">
         <input type="text" class="form-control" id="floatingInput" placeholder="Tasks" >
         <label for="floatingInput">Add Task</label>

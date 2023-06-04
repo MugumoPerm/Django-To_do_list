@@ -7,9 +7,9 @@
 
 <h4>
     <ul>
-    
-        <li> {{task}} </li>
-        
+    {% for list in task_list %}
+        <li> {{list}} </li>
+        {% endfor %}
     </ul>    
 </h4>
 
