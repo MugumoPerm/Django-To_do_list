@@ -9,7 +9,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-origin: border-box;
-    
+    background-position: center center;    
     
 }
 body h1, h2{
@@ -25,9 +25,7 @@ body form{
     display: flex;
 
 }
-button{
-    justify-content: center;
-    display: flex;
-    
+form button{
+    background-color: white;    
 
 }
