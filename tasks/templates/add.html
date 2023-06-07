@@ -1,5 +1,6 @@
-{% load widget_tweaks %}
 {% extends 'layout.html' %}
+
+{% load widget_tweaks %}
 
 {% block body %}
 
@@ -10,7 +11,7 @@
     <div class="form-floating col-md-2 mt-4  mb-3">
         {% comment %} <input type="text" class="form-control" id="floatingInput" name="addtask" placeholder="Tasks" required >
         <label for="floatingInput">Add A Task</label> <Br/> {% endcomment %}
-        {{form}} <Br/><Br/>
+        {% render_field form.task placeholder="Tasks" class+="form-control" id+="floatingInput" %} <Br/>
         <button  type="submit " class="btn btn-outline-primary  btn-lg ">Add</button>
 
     </div>

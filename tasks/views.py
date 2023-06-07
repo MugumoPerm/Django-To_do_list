@@ -3,10 +3,10 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
 
-tasked = ["cook"]
+tasked = []
 
 class NewTaskForm(forms.Form):
-    task = forms.CharField(label="New Task")
+    task = forms.CharField()
 
 
 # Create your views here.

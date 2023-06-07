@@ -4,14 +4,15 @@
 
 <h1>Hello,</h1>
 <h2>Here is a list of your Tasks</h2>
+<div style="display: flex; justify-content: center; margin-top: 1rem; padding: 3rem; text-decoration:none; color: white;">
 
 <h4>
-        <ul>
+        <ol>
         {% for task in tasked %}
-            <li style="color:white;"> {{task}} </li>
+            <li style="color:red; margin-top: 1rem; background-color:black; padding:0.4rem;"> {{task}} </li>
         {% endfor %}
-        </ul>    
+        </ol>    
 </h4>
 
-
+</div>
 {% endblock %}
