@@ -3,17 +3,30 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
 
-tasks = ["cook"]
+tasked = ["cook"]
 
-# class NewTaskForm(forms.Form):
-#     task = forms.CharField(label="New Task")
+class NewTaskForm(forms.Form):
+    task = forms.CharField(label="New Task")
 
 
 # Create your views here.
 def tasks(request):
     return render(request, "tasks.html", {
-        "task_list": tasks
+        "tasked": tasked
     })
 
 def add(request):
-    return render(request, "add.html")
+   if request.method == "POST":
+        form = NewTaskForm(request.POST)
+        if form.is_valid():
+            task = form.cleaned_data["task"]
+            tasked.append(task)
+            return HttpResponseRedirect(reverse("tasks"))
+        else:
+            return render(request, "add.html",{
+                "form": form
+            })
+   else:   
+        return render(request, "add.html", {
+            "form": NewTaskForm()
+        })
