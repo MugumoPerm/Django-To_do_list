@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% load widget_tweaks %}
 
 {% block body %}
@@ -13,8 +13,11 @@
         <label for="floatingInput">Add A Task</label> <Br/> {% endcomment %}
         {% render_field form.task placeholder="Tasks" class+="form-control" id+="floatingInput" %} <Br/>
         <button  type="submit " class="btn btn-outline-primary  btn-lg ">Add</button>
-
+        <button class="btn btn-primary btn-lg ">
+            <a class="nav-link active" href=" {% url 'tasks' %}">View Tasks</a>
+        </button>
     </div>
-</div>
+
+</form>
 
 {% endblock  %}

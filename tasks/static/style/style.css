@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    overflow: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -25,7 +27,8 @@ body form{
     display: flex;
 
 }
-form button{
-    background-color: white;    
-
+#viewbtn{
+    justify-content: center;
+    display: flex;
+    background-color: rgb(139, 16, 16);
 }

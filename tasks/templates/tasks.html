@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block body %}
 
 <h1>Hello,</h1>
@@ -8,11 +8,23 @@
 
 <h4>
         <ol>
+        {% if tasked %}    
         {% for task in tasked %}
-            <li style="color:red; margin-top: 1rem; background-color:black; padding:0.4rem;"> {{task}} </li>
+            
+                
+            
+                <li style="color:whitesmoke; margin-top: 1rem; background-color:rgb(29, 29, 29); padding:0.4rem;"> {{task}} </li><Br/>
         {% endfor %}
+        {% else %}
+        <h5> No Tasks</h5><Br/>
+        {% endif %}
+        <button class="btn btn-primary  btn-lg ">
+            <a class="nav-link active" href=" {% url 'add' %}">ADD Task</a>
+        </button>
+
         </ol>    
 </h4>
 
 </div>
+
 {% endblock %}
