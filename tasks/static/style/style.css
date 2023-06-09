@@ -22,13 +22,7 @@ body h1, h2{
  body h2{
     color: rgb(224, 216, 206);
 }
-body form{
-    justify-content: center;
+form{
     display: flex;
-
-}
-#viewbtn{
     justify-content: center;
-    display: flex;
-    background-color: rgb(139, 16, 16);
 }

@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
 
-tasked = []
+
 
 class NewTaskForm(forms.Form):
     task = forms.CharField()
@@ -11,8 +11,10 @@ class NewTaskForm(forms.Form):
 
 # Create your views here.
 def tasks(request):
+    if "tasks" not in request.session:
+        request.session["tasks"] = []
     return render(request, "tasks.html", {
-        "tasked": tasked
+        "tasks": request.session["tasks"]
     })
 
 def add(request):
@@ -20,7 +22,7 @@ def add(request):
         form = NewTaskForm(request.POST)
         if form.is_valid():
             task = form.cleaned_data["task"]
-            tasked.append(task)
+            request.session["tasks"] += [task]
             return HttpResponseRedirect(reverse("tasks"))
         else:
             return render(request, "add.html",{

@@ -7,9 +7,9 @@
 <div style="display: flex; justify-content: center; margin-top: 1rem; padding: 3rem; text-decoration:none; color: white;">
 <h4>
     <ol>
-        {% if tasked %}    
-            {% for task in tasked %}            
-                    <li style="color:whitesmoke; margin-top: 1rem; background-color:rgb(29, 29, 29); padding:0.4rem;"> {{task}} </li><Br/>
+        {% if tasks %}    
+            {% for task in tasks %}            
+                    <li style="color:whitesmoke; margin-top: 1rem; background-color:rgba(63, 61, 61,0.4); padding:0.4rem;"> {{task.capitalize}} </li><Br/>
             {% endfor %}
         {% else %}
             <h5> No Tasks</h5><Br/>
